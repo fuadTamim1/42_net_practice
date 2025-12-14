@@ -5,6 +5,22 @@
     <script src="js/show.js"></script>
     <script src="js/sim.js"></script>
     <meta charset="UTF-8">
+    <style>
+      .pop-up {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid #ccc;
+        padding: 20px;
+        background-color: white;
+        z-index: 1000;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
   </head>
 
   <body>
@@ -16,6 +32,12 @@
 	  <div id='logs_id' class='logs_inner' ></div>
       <div id='logs_button_id' class='logs_button'>⬆</div>
 	</div>
+
+    <div class="pop-up hidden" id="flag-popup">
+      <p id="flag-text">FLAG{REPLACE_ME}</p>
+      <button onclick="document.getElementById('flag-popup').classList.add('hidden');">Close</button>
+    </div>
+
     <script> load_board(); </script>
   </body>
 </html>

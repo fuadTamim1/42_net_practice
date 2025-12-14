@@ -1,4 +1,3 @@
-
 var level = 4;
 
 var hosts = [
@@ -34,3 +33,33 @@ var goals = [
     {'id':'2', 'type':'reach', 'id1':'A', 'id2':'R'},
     {'id':'3', 'type':'reach', 'id1':'B', 'id2':'R'}
 ];
+
+// NEW ELEMENT: store flag for this level
+var level_flag = "FLAG{LEVEL4_COMPLETE}";
+
+// NEW ELEMENT: function to show the flag
+function showFlag() {
+    var popup = document.getElementById('flag-popup');
+    var flagText = document.getElementById('flag-text');
+    flagText.textContent = level_flag;
+    popup.classList.remove('hidden');
+}
+
+// NEW ELEMENT: function to check if all goals are completed
+function checkGoals() {
+    var allOK = true;
+    goals.forEach(g => {
+        var result = sim_goal({
+            dst_name: 'destination',
+            src_name: 'source',
+            dst: g.id2,
+            src: g.id1,
+            dst_type: 'hid',
+            src_type: 'hid',
+            h1: hosts.find(h => h.id === g.id1),
+            h2: hosts.find(h => h.id === g.id2)
+        });
+        if (result.status !== 1) allOK = false;
+    });
+    if (allOK) showFlag();
+}

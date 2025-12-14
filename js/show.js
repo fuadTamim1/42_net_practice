@@ -309,7 +309,10 @@ function all_goals()
 		if (g_my_login != '')
 		{
 			if (level < 10)
-				document.getElementById("goals_id").innerHTML += " &nbsp; <input type=button value='Next level' onclick='window.location=\"level"+(level+1)+".html\";'>";
+            {
+                showFlag();
+				// document.getElementById("goals_id").innerHTML += " &nbsp; <input type=button value='Next level' onclick='window.location=\"level"+(level+1)+".html\";'>";
+            }
 			else
 				document.getElementById("goals_id").innerHTML += " &nbsp; <input type=button value='Complete!' onclick='window.location=\"end.html\";'>";
 		}
