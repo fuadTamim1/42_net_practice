@@ -6,7 +6,7 @@ body {
     font-family: "Arial", sans-serif;
     padding:0px;
     margin:0px;
-	background:	linear-gradient(rgba(204, 204, 204, 0.9), rgba(204, 204, 204, 0.9)), url("../img/site-bg.png");
+	background: url("../img/site-bg.png");
 }
 
 
@@ -309,12 +309,6 @@ body {
   }
 }
 
-/* General Challenge Enhancements */
-body {
-  font-family: "Arial", sans-serif;
-  background: linear-gradient(to bottom, #e3f2fd, #bbdefb);
-  color: #333;
-}
 
 .goals_div {
   background-color: #ffffff;
