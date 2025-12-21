@@ -303,23 +303,10 @@ function all_goals()
     document.getElementById("goals_id").innerHTML = '<h2>Level '+level+': </h2>\n';
     var nb = 0;
 	goals.forEach(elem => nb += show_goals(elem));
-    document.getElementById("goals_id").innerHTML += '<input type=button value="Check again" onclick="all_goals();"> &nbsp; <input type=button value="Get my config" onclick="dl_config();">';
+    document.getElementById("goals_id").innerHTML += '<input type=button value="Check again" onclick="all_goals();"> ';
     if (nb == goals.length)
     {
-		if (g_my_login != '')
-		{
-			if (level < 10)
-            {
-                showFlag();
-				// document.getElementById("goals_id").innerHTML += " &nbsp; <input type=button value='Next level' onclick='window.location=\"level"+(level+1)+".html\";'>";
-            }
-			else
-				document.getElementById("goals_id").innerHTML += " &nbsp; <input type=button value='Complete!' onclick='window.location=\"end.html\";'>";
-		}
-		else
-		{   // defense case
-			document.getElementById("goals_id").innerHTML += " &nbsp; <input type=button value='Next' onclick='window.location=next_eval();'>";
-		}		
+		showFlag();
     }
     document.getElementById("logs_id").innerHTML = g_sim_logs.replace(/\n/g, '<br />');
 }

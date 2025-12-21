@@ -5,6 +5,22 @@
     <script src="js/show.js"></script>
     <script src="js/sim.js"></script>
     <meta charset="UTF-8">
+    <style>
+      .pop-up {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid #ccc;
+        padding: 20px;
+        background-color: white;
+        z-index: 1000;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
   </head>
 
   <body>
@@ -20,6 +36,7 @@
       <p id="flag-text">FLAG{REPLACE_ME}</p>
       <button onclick="document.getElementById('flag-popup').classList.add('hidden');">Close</button>
     </div>
+    <div id="popup-backdrop" class="hidden" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 9998;" onclick="document.getElementById('flag-popup').classList.add('hidden'); document.getElementById('popup-backdrop').classList.add('hidden');"></div>
     <script> load_board(); </script>
   </body>
 </html>

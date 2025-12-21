@@ -38,9 +38,11 @@ var level_flag = "FLAG{SWITCH_MASTER}";
 // NEW ELEMENT: function to show the flag
 function showFlag() {
     var popup = document.getElementById('flag-popup');
+    var backdrop = document.getElementById('popup-backdrop');
     var flagText = document.getElementById('flag-text');
     flagText.textContent = level_flag;
     popup.classList.remove('hidden');
+    if (backdrop) backdrop.classList.remove('hidden');
 }
 
 // NEW ELEMENT: function to check if all goals are completed
